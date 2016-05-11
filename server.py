@@ -2,9 +2,9 @@ import bottle
 
 APP = bottle.Bottle()
 
-@APP.get('/')
+@APP.get('/index.html')
 def index():
-  return '<p>Hello</p>'
+  return bottle.static_file('index.html', '.')
 
 if __name__ == '__main__':
   bottle.run(application=APP)
