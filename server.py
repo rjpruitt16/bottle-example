@@ -1,10 +1,9 @@
 import bottle
+import random
 
-APP = bottle.Bottle()
-
-@APP.get('/index.html')
-def index():
-  return bottle.static_file('index.html', '.')
-
+@APP.get('/random')
+def random_integer():
+  return str(random.randint(0, 100))
+  
 if __name__ == '__main__':
   bottle.run(application=APP)
